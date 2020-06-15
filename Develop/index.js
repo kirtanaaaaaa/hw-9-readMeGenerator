@@ -65,43 +65,52 @@ inquirer
         message: "What tests were conducted?"
       }
     ])
-  });     
+    .then(function(answers){
+    var file = 
+    `## Table of Contents
+  
+    - [Description](#description)
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [License](#license)
+    - [Contributors](#contributors)
+    - [Tests](#tests)
+
+    ## Description
+  
+    ${answers.description}
+
+    ## Installation 
+
+    ${answers.installation}
+
+    ## Usage
+
+    ${answers.usage}
+
+    ## Licenses
+
+    ${answers.license}
+
+    ## Tests
+
+    ${answers.tests}
+
+    ## Contributors
+
+    ${answers.contributors}
+    `
+    var doc = file
+    fs.appendFile("readMe.md", doc, function (err){
+        if (err){
+            throw err;
+        }
+    })
+ })
+});     
 })
 
 
-`## Table of Contents
-  
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributors](#contributors)
-- [Tests](#tests)
-
-## Description
-  
-${answers.description}
-
-## Installation 
-
-${answers.installation}
-
-## Usage
-
-${answers.usage}
-
-## Licenses
-
-${answers.license}
-
-## Tests
-
-${answers.tests}
-
-## Contributors
-
-${answers.contributors}
-`
 
 
 
