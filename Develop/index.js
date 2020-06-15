@@ -51,7 +51,7 @@ inquirer
       },
       {
         type: "input",
-        name: "License",
+        name: "license",
         message: "Indicate the license details."
       },
       {
@@ -67,7 +67,43 @@ inquirer
     ])
   });     
 })
+
+
+`## Table of Contents
   
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributors](#contributors)
+- [Tests](#tests)
+
+## Description
+  
+${answers.description}
+
+## Installation 
+
+${answers.installation}
+
+## Usage
+
+${answers.usage}
+
+## Licenses
+
+${answers.license}
+
+## Tests
+
+${answers.tests}
+
+## Contributors
+
+${answers.contributors}
+`
+
+
 
 
 
