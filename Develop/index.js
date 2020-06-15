@@ -18,8 +18,8 @@ inquirer
       const username = res.data.login;
       const email = res.data.email;
       const avatarUrl = res.data.avatar_url;
-
-      const doc = `username:` + username + `\n` + `email:` + email + `\n`;
+      const avatar = `![Avatar](`+ avatarUrl +`)`;
+      const doc = `username:` + username + `\n` + `email:` + email + `\n` + avatar + `\n`;
 
       fs.writeFile("readMe.md", doc, function(err) {
         if (err) {
@@ -27,49 +27,47 @@ inquirer
         } 
     });
   })
+  .then(function(){
+      inquirer.prompt([   
+      {
+        type: "input",
+        name: "title",
+        message: "what is the title of your project?"
+      },
+      {
+        type: "input",
+        name: "description",
+        message: "Describe your project."
+      },
+      {
+        type: "input",
+        name: "installation",
+        message: "what was the installation process?"
+      },
+      {
+        type: "input",
+        name: "usage",
+        message: "Describe the usage of your project."
+      },
+      {
+        type: "input",
+        name: "License",
+        message: "Indicate the license details."
+      },
+      {
+        type: "input",
+        name: "contributors",
+        message: "Who contributed to this project"
+      },
+      {
+        type: "input",
+        name: "tests",
+        message: "What tests were conducted?"
+      }
+    ])
+  });     
 })
   
-
-
-
-
-//     {
-//       type: "input",
-//       name: "title",
-//       message: "what is the title of your project?"
-//     },
-//     {
-//       type: "input",
-//       name: "description",
-//       message: "Describe your project."
-//     },
-//     {
-//       type: "input",
-//       name: "installation",
-//       message: "what was the installation process?"
-//     },
-//     {
-//       type: "input",
-//       name: "usage",
-//       message: "Describe the usage of your project."
-//     },
-//     {
-//       type: "input",
-//       name: "License",
-//       message: "Indicate the license details."
-//     },
-//     {
-//       type: "input",
-//       name: "contributors",
-//       message: "Who contributed to this project"
-//     },
-//     {
-//       type: "input",
-//       name: "tests",
-//       message: "What tests were conducted?"
-//     }
-//   ])
-// }; 
 
 
 
