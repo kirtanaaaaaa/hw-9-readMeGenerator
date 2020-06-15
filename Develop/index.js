@@ -74,31 +74,31 @@ inquirer
     - [Usage](#usage)
     - [License](#license)
     - [Contributors](#contributors)
-    - [Tests](#tests)
+    - [Tests](#tests)`
 
-    ## Description
+    `## Description
   
-    ${answers.description}
+    ${answers.description}`
 
-    ## Installation 
+    `## Installation 
 
-    ${answers.installation}
+    ${answers.installation}`
 
-    ## Usage
+    `## Usage
 
-    ${answers.usage}
+    ${answers.usage}`
 
-    ## Licenses
+    `## Licenses
 
-    ${answers.license}
+    ${answers.license}`
 
-    ## Tests
+    `## Tests
 
-    ${answers.tests}
+    ${answers.tests}`
 
-    ## Contributors
+    `## Contributors
 
-    ${answers.contributors}
+    ${answers.contributors}`
     `
     var doc = file
     fs.appendFile("readMe.md", doc, function (err){
